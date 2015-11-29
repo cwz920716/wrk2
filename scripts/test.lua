@@ -1,5 +1,5 @@
 init = function(args)
-   userID = tonumber( tostring( {} ):sub(8) )
+   userID = "guest" .. tonumber( tostring( {} ):sub(8) )
    requestID = 0
 
    direction = {}
@@ -18,7 +18,7 @@ request = function()
    elseif requestID == 5 then
       path = "/part?id=" .. userID
       requestID = 0
-      userID = tonumber( tostring( {} ):sub(8) )
+      userID = "guest" .. tonumber( tostring( {} ):sub(8) )
    else
       path = "/move?id=" .. userID .. "&direction=" .. direction[requestID]
       requestID = requestID + 1
