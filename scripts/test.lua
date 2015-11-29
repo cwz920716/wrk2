@@ -1,7 +1,6 @@
 init = function(args)
-   userID = 0
+   userID = tonumber( tostring( {} ):sub(8) )
    requestID = 0
-   gap = args
 
    direction = {}
    direction[1] = "up"
@@ -19,11 +18,12 @@ request = function()
    elseif requestID == 5 then
       path = "/part?id=" .. userID
       requestID = 0
-      userID = 
+      userID = tonumber( tostring( {} ):sub(8) )
    else
       path = "/move?id=" .. userID .. "&direction=" .. direction[requestID]
       requestID = requestID + 1
    end
 
+   print(path)
    return wrk.format(nil, path)
 end
