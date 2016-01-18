@@ -12,17 +12,36 @@ request = function()
       path = base .. "/createPad?padID=" .. padID
       path = path .. api_key
       requestID = requestID + 1
-   elseif requestID > 5 then
-      path = "/part?id=" .. userID
+   elseif requestID == 1 then
+      path = base .. "/getText?padID=" .. padID
+      path = path .. api_key
+      requestID = requestID + 1
+   elseif requestID == 2 then
+      path = base .. "/setText?padID=" .. padID
+      path = path .. "&text=Hello"
+      path = path .. api_key
+      requestID = requestID + 1
+   elseif requestID == 3 then
+      path = base .. "/setText?padID=" .. padID
+      path = path .. "&text=World!"
+      path = path .. api_key
+      requestID = requestID + 1
+   elseif requestID == 4 then
+      path = base .. "/setText?padID=" .. padID
+      path = path .. "&text=From"
+      path = path .. api_key
+      requestID = requestID + 1
+   elseif requestID == 5 then
+      path = base .. "/getText?padID=" .. padID
+      path = path .. api_key
+      requestID = requestID + 1
+   elseif requestID == 6 then
+      path = base .. "/deletePad?padID=" .. padID
+      path = path .. api_key
       requestID = 0
       userID = "guest" .. tonumber( tostring( {} ):sub(8) )
-   else
-      path = "/move?id=" .. userID .. "&direction=" .. direction[requestID]
-      requestID = requestID + 1
    end
 
-   if requestID > 5 then
-   end
-
+   print(path)
    return wrk.format(nil, path)
 end
