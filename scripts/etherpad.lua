@@ -20,7 +20,7 @@ request = function()
       path = base .. "/setText?padID=" .. padID
       path = path .. "&text=Hello"
       path = path .. api_key
-      requestID = requestID + 1
+      --requestID = requestID + 1
    elseif requestID == 3 then
       path = base .. "/setText?padID=" .. padID
       path = path .. "&text=World!"
