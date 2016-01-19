@@ -42,6 +42,6 @@ request = function()
       userID = "guest" .. tonumber( tostring( {} ):sub(8) )
    end
 
-   print(path)
+   --print(path)
    return wrk.format(nil, path)
 end
