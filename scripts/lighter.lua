@@ -37,6 +37,7 @@ request = function()
       requestID = 0
    end
 
+   path = "/styles/style.css"
    --print(path)
    return wrk.format(nil, path)
 end
