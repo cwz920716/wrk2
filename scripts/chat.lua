@@ -7,7 +7,7 @@ request = function()
    if requestID == 0 then
       path = "/rooms"
       wrk.body   = string.format("{ \"name\" : %d, \"slug\" : %d, \"description\" : %d }", roomID, roomID, roomID)
-      print(wrk.body)
+      --print(wrk.body)
       wrk.headers["Content-Type"] = "application/json"
       method = "POST"
       requestID = requestID + 1
@@ -22,7 +22,7 @@ request = function()
    elseif requestID == 3 then
       path = string.format("/rooms/%s/messages", roomID)
       wrk.body   = string.format("{ \"text\" : \"%s\" }", "Howdy?")
-      print(wrk.body)
+      --print(wrk.body)
       wrk.headers["Content-Type"] = "application/json"
       method = "POST"
       requestID = requestID + 1
@@ -33,7 +33,7 @@ request = function()
    elseif requestID == 5 then
       path = string.format("/rooms/%s/messages", roomID)
       wrk.body   = string.format("{ \"text\" : \"%s\" }", "Is any one here?")
-      print(wrk.body)
+      --print(wrk.body)
       wrk.headers["Content-Type"] = "application/json"
       method = "POST"
       requestID = requestID + 1
@@ -53,7 +53,7 @@ request = function()
       requestID = 0
    end
 
-   print("-----")
-   print(path)
+   --print("-----")
+   --print(path)
    return wrk.format(method, path)
 end
