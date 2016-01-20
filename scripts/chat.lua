@@ -57,7 +57,3 @@ request = function()
    print(path)
    return wrk.format(method, path)
 end
-
-response = function (status, headers, body)
-   print(body)
-end
