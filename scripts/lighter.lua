@@ -3,10 +3,8 @@ init = function(args)
 end
 
 request = function()
-   local base = ""
-
    if requestID == 0 then
-      path = "/"
+      path = "/favicon.ico"
       requestID = requestID + 1
    elseif requestID == 1 then
       path = "/styles/style.css"
@@ -31,13 +29,9 @@ request = function()
       requestID = requestID + 1
    elseif requestID == 8 then
       path = "/styles/fonts/source-sans-pro/SourceSansPro-Black-webfont.woff"
-      requestID = requestID + 1
-   elseif requestID == 9 then
-      path = "/favicon.ico"
       requestID = 0
    end
 
-   path = "/styles/highlight.css"
-   --print(path)
-   return wrk.format(nil, path)
+    path = "/styles/media.css"
+    return wrk.format(nil, path)
 end

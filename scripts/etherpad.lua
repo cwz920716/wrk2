@@ -38,7 +38,7 @@ request = function()
       path = base .. "/deletePad?padID=" .. padID
       path = path .. api_key
       requestID = 0
-      userID = "guest" .. tonumber( tostring( {} ):sub(8) )
+      --userID = "guest" .. tonumber( tostring( {} ):sub(8) )
    end
 
    --print(path)
